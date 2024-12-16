@@ -2,7 +2,7 @@
     <html lang="pl">
         <head>
             <meta charset="UTF-8">
-            <title>BLOG DLA FANÓW MOTORYZACJI</title>
+            <title><br>BLOG DLA FANÓW MOTORYZACJI</br></title>
         </head>
 <body>
     <div>
@@ -11,20 +11,18 @@
         <h3>Autorem jest oczywiście wasz pan Mikał</h3>
         <h4>Wszelkie prawa zastrzeżone pysie</h4>
     </div>
-   <div>
-        <p>To jest akapit</p>
-        <em>To jest wyróżniony tekst</em><br>
-        <strong>Tu jest pogrubiony tekst</strong><br>
-        <a href="https://www.ea.com/pl-pl/games/need-for-speed/need-for-speed-unbound">DLA GRACZY</a>
-   </div>
+        {% comment "Komentarz autora" %}
+        <p>Tutaj lista postów (czyli komentarz - odpowiednik pythona # w html)</p>
+        {% endcomment %}
+        {% for post in posts %}
     <div>
-        <ul>
-        <li>BMW M3 E46
-        <li>Nissan Skyline R34 GTT</li>
-        <li>Toyota Supra MK4</li>
-        <li>Chevrolet Corvette C6</li>
-        </li>
-        </ul>
+        <p>Opublikowany: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
+    </div>
+    {% endfor %}
+    <div>
+      
     </div>
 </body>
 </html>
