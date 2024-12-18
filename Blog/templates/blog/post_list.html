@@ -1,28 +1,12 @@
-<!DOCTYPE html>
-    <html lang="pl">
-        <head>
-            <meta charset="UTF-8">
-            <title>BLOG DLA FANÓW MOTORYZACJI</title>
-        </head>
-<body>
-    <div>
-        <h1>Witam na stronie Szybkich i Wściekłych</h1>
-        <h2>Jest to strona poświęcona upaleńcom i gruzinom</h2>
-        <h3>Autorem jest oczywiście wasz pan Mikał</h3>
-        <h4>Wszelkie prawa zastrzeżone pysie</h4>
-    </div>
-        {% comment "Komentarz autora" %}
-        <p>Tutaj lista postów (czyli komentarz - odpowiednik pythona # w html)</p>
-        {% endcomment %}
-        {% for post in posts %}
-    <div>
-        <p>Opublikowany: {{ post.publish_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+        <div class="post">
+        <div class="data">
+            <p>Opublikowany: {{ post.publish_date }}</p></div>
+        </div>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <em>{{ post.text|linebreaksbr }}</em>
-    </div>
-    {% endfor %}
-    <div>
-      
-    </div>
-</body>
-</html>
+        </div>
+{% endfor %}
+{% endblock %}

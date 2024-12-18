@@ -1,0 +1,27 @@
+a{
+    color:crimson;
+}
+
+body{
+    font-family: "Impact", serif;
+    background-color: black;
+}
+
+.page-header{
+    background-color: black;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, a:active {
+    color:yellow;
+    font-size: 36pt;
+    text-decoration: none;
+}
+.data{
+    color:darkslategray;
+}
+
+.content-container{
+    margin-left: 40px;
+}
